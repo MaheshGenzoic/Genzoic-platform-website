@@ -416,6 +416,35 @@ const Blogs = () => {
           icon: '📦'
         }
       ]
+    },
+    {
+      id: 'genzoic-upside-transformation',
+      slug: 'genzoic-upside-transformation',
+      category: 'Case Study',
+      categoryColor: 'bg-violet-100 text-violet-700',
+      date: 'Dec 04, 2025',
+      title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
+      description: 'At Genzoic, we build custom AI agents that solve real business problems. See how we helped Upside transform their operations with intelligent systems for marketing, inventory, and sales.',
+      image: '/lovable-uploads/upside-dashboard.jpeg',
+      readTime: '12 min read',
+      popularity: 90,
+      contentSections: [
+        {
+          title: 'Custom AI Solutions',
+          subtitle: 'Tailored intelligent systems that solve real business challenges',
+          icon: '🤖'
+        },
+        {
+          title: 'Marketing Optimization',
+          subtitle: 'Data-driven campaign analysis with actionable insights',
+          icon: '📊'
+        },
+        {
+          title: 'Smart Inventory & Sales',
+          subtitle: 'Real-time tracking and AI-powered recommendations',
+          icon: '📦'
+        }
+      ]
     }
   ];
 
@@ -466,23 +495,21 @@ const Blogs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <div className="bg-gray-100 p-1 rounded-lg flex">
-              <button 
+              <button
                 onClick={() => setSortBy('recent')}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
-                  sortBy === 'recent' 
-                    ? 'bg-blue-600 text-white' 
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${sortBy === 'recent'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+                  }`}
               >
                 Most Recent
               </button>
-              <button 
+              <button
                 onClick={() => setSortBy('popular')}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
-                  sortBy === 'popular' 
-                    ? 'bg-blue-600 text-white' 
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${sortBy === 'popular'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+                  }`}
               >
                 Most Popular
               </button>
@@ -496,7 +523,7 @@ const Blogs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <article 
+              <article
                 key={post.id}
                 className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full max-h-[580px]"
                 onClick={() => {
@@ -504,9 +531,9 @@ const Blogs = () => {
                   handleBlogClick(post.slug);
                 }}
               >
-                <img 
-                  className="w-full h-40 object-cover rounded-t-xl" 
-                  src={post.image} 
+                <img
+                  className="w-full h-40 object-cover rounded-t-xl"
+                  src={post.image}
                   alt={post.title}
                 />
                 <div className="p-5 flex flex-col flex-grow">
@@ -518,7 +545,7 @@ const Blogs = () => {
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">{post.title}</h3>
                   <p className="text-gray-600 mb-3 text-sm line-clamp-2">{post.description}</p>
-                  
+
                   {/* Dynamic Content Sections */}
                   {post.contentSections && (
                     <div className="space-y-2 mb-4 flex-grow">
@@ -535,10 +562,10 @@ const Blogs = () => {
                       ))}
                     </div>
                   )}
-                  
+
                   <div className="flex items-center justify-between mt-auto pt-2">
                     <button className="text-blue-600 font-medium hover:text-blue-700 transition-colors flex items-center text-sm">
-                      Read More 
+                      Read More
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </button>
                     <span className="text-xs text-gray-500">{post.readTime}</span>
@@ -554,7 +581,7 @@ const Blogs = () => {
       {hasMore && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <button 
+            <button
               onClick={handleLoadMore}
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
             >

@@ -8,6 +8,7 @@ import { blog2AdditionalSections } from "../content/blog2-sections";
 import { blog3AdditionalSections } from "../content/blog3-sections";
 import { blog4AdditionalSections } from "../content/blog4-sections";
 import { blog5AdditionalSections } from "../content/blog5-sections";
+import { blog6AdditionalSections } from "../content/blog6-sections";
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -458,11 +459,27 @@ const BlogDetail = () => {
       relatedAgent: 'shopping-assistant-agent',
       relatedAgentTitle: 'Shopping Assistant Agent',
       exploreButtonText: 'Explore Shopping Assistant Agent'
+    },
+    'genzoic-upside-transformation': {
+      id: 'genzoic-upside-transformation',
+      category: 'Case Study',
+      categoryColor: 'bg-violet-100 text-violet-700',
+      heroGradient: 'from-violet-600 to-purple-800',
+      date: 'Dec 20, 2024',
+      title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
+      description: 'At Genzoic, we build custom AI agents that solve real business problems. See how we helped Upside transform their operations with intelligent systems for marketing, inventory, and sales.',
+      image: '/lovable-uploads/upside-dashboard.jpeg',
+      readTime: '12 min read',
+      author: 'Genzoic Research Team',
+      sections: blog6AdditionalSections,
+      relatedAgent: 'ai-marketeer-agent',
+      relatedAgentTitle: 'AI Marketeer Agent',
+      exploreButtonText: 'Explore AI Marketeer Agent'
     }
   };
 
   console.log('BlogDetail - Available blog keys:', Object.keys(blogData));
-  
+
   const blog = blogData[id as keyof typeof blogData];
   console.log('BlogDetail - Found blog:', blog ? blog.title : 'Not found');
 
@@ -474,7 +491,7 @@ const BlogDetail = () => {
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Blog not found</h1>
           <p className="text-gray-600 mb-4">Looking for blog with ID: {id}</p>
           <p className="text-gray-600 mb-4">Available blogs: {Object.keys(blogData).join(', ')}</p>
-          <button 
+          <button
             onClick={() => navigate('/blogs')}
             className="text-blue-600 hover:text-blue-700 font-medium"
           >
@@ -544,14 +561,14 @@ const BlogDetail = () => {
       {/* Hero Section */}
       <section className={`bg-gradient-to-br ${blog.heroGradient} text-white py-16 relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <button 
+          <button
             onClick={() => navigate('/blogs')}
             className="flex items-center text-blue-100 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to all articles
           </button>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
@@ -560,15 +577,15 @@ const BlogDetail = () => {
                   {blog.category}
                 </span>
               </div>
-              
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 {blog.title}
               </h1>
-              
+
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
                 {blog.description}
               </p>
-              
+
               <div className="flex items-center space-x-6 text-blue-100">
                 <div className="flex items-center">
                   <User className="w-5 h-5 mr-2" />
@@ -587,9 +604,9 @@ const BlogDetail = () => {
 
             {/* Right Image */}
             <div className="lg:block">
-              <img 
-                className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-2xl" 
-                src={blog.image} 
+              <img
+                className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-2xl"
+                src={blog.image}
                 alt={blog.title}
               />
             </div>
@@ -603,13 +620,29 @@ const BlogDetail = () => {
           <div className="prose prose-lg max-w-none">
             {blog.sections && blog.sections.length > 0 ? (
               blog.sections.map((section, index) => (
-                <div key={index} className="mb-12">
+                <div key={index} className="mb-16">
                   <div className="flex items-center mb-6">
-                    {section.icon && <section.icon className="w-8 h-8 text-blue-600 mr-4" />}
+                    {section.icon && typeof section.icon === 'string' ? (
+                      <span className="text-3xl mr-4">{section.icon}</span>
+                    ) : section.icon ? (
+                      <section.icon className="w-8 h-8 text-blue-600 mr-4" />
+                    ) : null}
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
                       {section.title}
                     </h2>
                   </div>
+
+                  {/* Section Image */}
+                  {section.image && (
+                    <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  )}
+
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     {Array.isArray(section.content) ? (
                       section.content.map((paragraph, pIndex) => (
@@ -646,18 +679,18 @@ const BlogDetail = () => {
               Discover how AI agents can solve the challenges discussed in this article. Explore specialized solutions or browse our complete marketplace of intelligent automation tools.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+            <button
               onClick={handleExploreAgent}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
               </svg>
               {blog.exploreButtonText || `Explore ${blog.relatedAgentTitle}`}
             </button>
-            <button 
+            <button
               onClick={handleBrowseAllAgents}
               className="bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-400 transition-colors border-2 border-blue-500 hover:border-blue-400"
             >

@@ -465,7 +465,7 @@ const BlogDetail = () => {
       category: 'Case Study',
       categoryColor: 'bg-violet-100 text-violet-700',
       heroGradient: 'from-violet-600 to-purple-800',
-      date: 'Dec 20, 2024',
+      date: 'Dec 04, 2025',
       title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
       description: 'At Genzoic, we build custom AI agents that solve real business problems. See how we helped Upside transform their operations with intelligent systems for marketing, inventory, and sales.',
       image: '/lovable-uploads/upside-dashboard.jpeg',

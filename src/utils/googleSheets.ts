@@ -9,10 +9,15 @@ export interface ContactFormData {
   message: string;
 }
 
-export const submitToGoogleSheets = async (data: any, formType: string = 'general'): Promise<{ success: boolean; message: string }> => {
+
+export interface GoogleSheetData {
+  [key: string]: string | number | boolean | object | null | undefined;
+}
+
+export const submitToGoogleSheets = async (data: GoogleSheetData, formType: string = 'general'): Promise<{ success: boolean; message: string }> => {
   try {
-    console.log('Submitting to Google Sheets with form type:', formType);
-    console.log('Data being submitted:', data);
+    // console.log('Submitting to Google Sheets with form type:', formType);
+    // console.log('Data being submitted:', data);
     
     // Create FormData to avoid CORS issues with Google Apps Script
     const formData = new FormData();
@@ -28,13 +33,13 @@ export const submitToGoogleSheets = async (data: any, formType: string = 'genera
       if (data[key] !== null && data[key] !== undefined && data[key] !== '') {
         const value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : String(data[key]);
         formData.append(key, value);
-        console.log(`Adding field: ${key} = ${value}`);
+        // console.log(`Adding field: ${key} = ${value}`);
       }
     });
     
-    console.log('FormData entries:');
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ': ' + pair[1]);
+    // console.log('FormData entries:');
+    for (const pair of formData.entries()) {
+      // console.log(pair[0] + ': ' + pair[1]);
     }
     
     const response = await fetch(GOOGLE_SHEETS_URL, {
@@ -43,7 +48,7 @@ export const submitToGoogleSheets = async (data: any, formType: string = 'genera
       body: formData
     });
     
-    console.log('Google Sheets response status:', response.status);
+    // console.log('Google Sheets response status:', response.status);
     
     // Since we're using no-cors mode, we can't read the response
     // but we assume success if no error was thrown

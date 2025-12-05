@@ -14,6 +14,15 @@ import Footer from "../components/Footer";
 import { getAgentBySlug } from "../utils/agentData";
 import { submitToGoogleSheets } from "../utils/googleSheets";
 
+
+interface AgentForm {
+  fullName: string;
+  email: string;
+  companyName: string;
+  additionalCustomizations: string;
+  timeline: string;
+}
+
 const AgentDetails = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -21,7 +30,7 @@ const AgentDetails = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const form = useForm({
+  const form = useForm<AgentForm>({
     defaultValues: {
       fullName: "",
       email: "",
@@ -61,7 +70,7 @@ const AgentDetails = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: AgentForm) => {
     setIsSubmitting(true);
     try {
       const formData = {
@@ -90,6 +99,7 @@ const AgentDetails = () => {
       setIsSubmitting(false);
     }
   };
+
 
   const handleSubmitAnother = () => {
     setIsSubmitted(false);
@@ -155,7 +165,7 @@ const AgentDetails = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-linear-to-br from-blue-50 to-indigo-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

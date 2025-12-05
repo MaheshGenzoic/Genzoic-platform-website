@@ -8,6 +8,7 @@ import { blog2AdditionalSections } from "../content/blog2-sections";
 import { blog3AdditionalSections } from "../content/blog3-sections";
 import { blog4AdditionalSections } from "../content/blog4-sections";
 import { blog5AdditionalSections } from "../content/blog5-sections";
+import { blog6AdditionalSections } from "../content/blog6-sections";
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const BlogDetail = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Debug logging
-  console.log('BlogDetail - URL id parameter:', id);
+  // console.log('BlogDetail - URL id parameter:', id);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +40,7 @@ const BlogDetail = () => {
     'quick-commerce-insights': {
       id: 'quick-commerce-insights',
       category: 'Quick Commerce Insights',
-      categoryColor: 'bg-indigo-100 text-indigo-800',
+      categoryColor: 'text-indigo-800',
       heroGradient: 'from-indigo-600 to-purple-800',
       date: 'Dec 12, 2024',
       title: 'The Hidden Cost of Order Mistakes in Quick Commerce',
@@ -55,7 +56,7 @@ const BlogDetail = () => {
     'laboratory-automation': {
       id: 'laboratory-automation',
       category: 'Laboratory Automation',
-      categoryColor: 'bg-blue-100 text-blue-700',
+      categoryColor: 'text-blue-700',
       heroGradient: 'from-blue-600 to-cyan-800',
       date: 'Dec 10, 2024',
       title: 'From Chaos to Clarity: Automating Lab Supplies Procurement with AI',
@@ -71,7 +72,7 @@ const BlogDetail = () => {
     'healthcare-ai': {
       id: 'healthcare-ai',
       category: 'Healthcare AI',
-      categoryColor: 'bg-green-100 text-green-700',
+      categoryColor: 'text-green-700',
       heroGradient: 'from-emerald-600 to-teal-800',
       date: 'Dec 8, 2024',
       title: 'AI-Powered Precision Medicine: Tailoring Treatments and Improving Patient Outcomes',
@@ -87,7 +88,7 @@ const BlogDetail = () => {
     'ai-automation': {
       id: 'ai-automation',
       category: 'AI Automation',
-      categoryColor: 'bg-purple-100 text-purple-700',
+      categoryColor: 'text-purple-700',
       heroGradient: 'from-purple-600 to-pink-800',
       date: 'Dec 5, 2024',
       title: 'Beyond Automation: Unpacking the "Agent" in Agentic AI with Genzoic',
@@ -103,7 +104,7 @@ const BlogDetail = () => {
     'agriculture-tech': {
       id: 'agriculture-tech',
       category: 'Agriculture Tech',
-      categoryColor: 'bg-teal-100 text-teal-700',
+      categoryColor: 'text-teal-700',
       heroGradient: 'from-green-600 to-emerald-800',
       date: 'Dec 3, 2024',
       title: 'Agentic AI: Revolutionizing Precision Agriculture in the US',
@@ -119,7 +120,7 @@ const BlogDetail = () => {
     'business-process': {
       id: 'business-process',
       category: 'Business Process',
-      categoryColor: 'bg-orange-100 text-orange-700',
+      categoryColor: 'text-orange-700',
       heroGradient: 'from-orange-600 to-red-800',
       date: 'Dec 1, 2024',
       title: 'Agentic AI vs. RPA: Automating Complex Business Processes Intelligently',
@@ -168,7 +169,7 @@ const BlogDetail = () => {
     'business-intelligence': {
       id: 'business-intelligence',
       category: 'Business Intelligence',
-      categoryColor: 'bg-indigo-100 text-indigo-800',
+      categoryColor: 'text-indigo-800',
       heroGradient: 'from-slate-600 to-blue-800',
       date: 'Nov 28, 2024',
       title: 'The ROI of Agentic AI: Benefits for Service-Based Businesses',
@@ -217,7 +218,7 @@ const BlogDetail = () => {
     'marketing-ai': {
       id: 'marketing-ai',
       category: 'Marketing AI',
-      categoryColor: 'bg-purple-100 text-purple-700',
+      categoryColor: 'text-purple-700',
       heroGradient: 'from-rose-600 to-purple-800',
       date: 'Nov 25, 2024',
       title: 'Hyper-Personalized D2C Marketing: Drive Sales & Loyalty',
@@ -266,7 +267,7 @@ const BlogDetail = () => {
     'tax-finance': {
       id: 'tax-finance',
       category: 'Tax & Finance',
-      categoryColor: 'bg-emerald-100 text-emerald-700',
+      categoryColor: 'text-emerald-700',
       heroGradient: 'from-emerald-600 to-green-800',
       date: 'Nov 22, 2024',
       title: 'AI Tax Filing: Maximize Your Returns with Agentic AI',
@@ -315,7 +316,7 @@ const BlogDetail = () => {
     'data-management': {
       id: 'data-management',
       category: 'Data Management',
-      categoryColor: 'bg-blue-100 text-blue-700',
+      categoryColor: 'text-blue-700',
       heroGradient: 'from-blue-600 to-indigo-800',
       date: 'Nov 19, 2024',
       title: 'Data Management & Analysis: Strategies for Success',
@@ -364,7 +365,7 @@ const BlogDetail = () => {
     'workflow-automation': {
       id: 'workflow-automation',
       category: 'Workflow Automation',
-      categoryColor: 'bg-teal-100 text-teal-700',
+      categoryColor: 'text-teal-700',
       heroGradient: 'from-teal-600 to-cyan-800',
       date: 'Nov 16, 2024',
       title: 'How AI Agents Streamline Your Daily Workflow',
@@ -413,7 +414,7 @@ const BlogDetail = () => {
     'ecommerce-ai': {
       id: 'ecommerce-ai',
       category: 'E-commerce AI',
-      categoryColor: 'bg-pink-100 text-pink-700',
+      categoryColor: 'text-pink-700',
       heroGradient: 'from-pink-600 to-rose-800',
       date: 'Nov 13, 2024',
       title: 'Smart E-commerce: AI-Driven Customer Experience',
@@ -458,23 +459,39 @@ const BlogDetail = () => {
       relatedAgent: 'shopping-assistant-agent',
       relatedAgentTitle: 'Shopping Assistant Agent',
       exploreButtonText: 'Explore Shopping Assistant Agent'
+    },
+    'genzoic-upside-transformation': {
+      id: 'genzoic-upside-transformation',
+      category: 'Case Study',
+      categoryColor: 'text-violet-700',
+      heroGradient: 'from-violet-600 to-purple-800',
+      date: 'Dec 05, 2025',
+      title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
+      description: 'At Genzoic, we focus on creating AI-powered solutions that solve real-world business challenges. One great example of that is our recent work with Upside Health, a company on a mission to make better health and nutrition accessible to everyone. To support their growing network of stores, our team designed a Stock Inventory Report System,a smart, data-driven tool that helps Upside Health track, manage, and optimize their stock across multiple cities while reducing waste and improving efficiency.',
+      image: '/lovable-uploads/upside-hro.png',
+      readTime: '8 min read',
+      author: 'Uzair Tajmat',
+      sections: blog6AdditionalSections,
+      relatedAgent: 'lab-supply-management-agent',
+      relatedAgentTitle: 'Lab Supply Management Agent',
+      exploreButtonText: 'Explore Lab Supply Management Agent'
     }
   };
 
-  console.log('BlogDetail - Available blog keys:', Object.keys(blogData));
-  
+  // console.log('BlogDetail - Available blog keys:', Object.keys(blogData));
+
   const blog = blogData[id as keyof typeof blogData];
-  console.log('BlogDetail - Found blog:', blog ? blog.title : 'Not found');
+  // console.log('BlogDetail - Found blog:', blog ? blog.title : 'Not found');
 
   if (!blog) {
-    console.log('BlogDetail - Blog not found for id:', id);
+    // console.log('BlogDetail - Blog not found for id:', id);
     return (
       <div className="bg-white font-sans min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Blog not found</h1>
           <p className="text-gray-600 mb-4">Looking for blog with ID: {id}</p>
           <p className="text-gray-600 mb-4">Available blogs: {Object.keys(blogData).join(', ')}</p>
-          <button 
+          <button
             onClick={() => navigate('/blogs')}
             className="text-blue-600 hover:text-blue-700 font-medium"
           >
@@ -537,38 +554,40 @@ const BlogDetail = () => {
     }, 100);
   };
 
+  const isUpsideBlog = blog.id === 'genzoic-upside-transformation';
+
   return (
     <div className="bg-white font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Header />
 
       {/* Hero Section */}
-      <section className={`bg-gradient-to-br ${blog.heroGradient} text-white py-16 relative overflow-hidden`}>
+      <section className={`bg-linear-to-br ${blog.heroGradient} text-white py-16 relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <button 
+          <button
             onClick={() => navigate('/blogs')}
             className="flex items-center text-blue-100 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to all articles
           </button>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
               <div className="mb-6">
-                <span className={`px-3 py-1 rounded-full text-sm font-medium ${blog.categoryColor} bg-opacity-20 text-white`}>
+                <span className={`px-3 py-1 rounded-full text-sm font-medium bg-white bg-opacity-20 ${blog.categoryColor} font-bold border border-white border-opacity-30`}>
                   {blog.category}
                 </span>
               </div>
-              
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 {blog.title}
               </h1>
-              
+
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
                 {blog.description}
               </p>
-              
+
               <div className="flex items-center space-x-6 text-blue-100">
                 <div className="flex items-center">
                   <User className="w-5 h-5 mr-2" />
@@ -587,9 +606,9 @@ const BlogDetail = () => {
 
             {/* Right Image */}
             <div className="lg:block">
-              <img 
-                className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-2xl" 
-                src={blog.image} 
+              <img
+                className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-2xl"
+                src={blog.image}
                 alt={blog.title}
               />
             </div>
@@ -598,27 +617,55 @@ const BlogDetail = () => {
       </section>
 
       {/* Blog Content */}
-      <section className="py-12">
+      <section className={isUpsideBlog ? 'py-16' : 'py-12'}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             {blog.sections && blog.sections.length > 0 ? (
               blog.sections.map((section, index) => (
-                <div key={index} className="mb-12">
-                  <div className="flex items-center mb-6">
-                    {section.icon && <section.icon className="w-8 h-8 text-blue-600 mr-4" />}
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                <div key={index} className={isUpsideBlog ? 'mb-20' : 'mb-16'}>
+                  {/* Section Divider */}
+                  {isUpsideBlog && index > 0 && (
+                    <div className="mb-16 pt-8 border-t border-gray-200"></div>
+                  )}
+
+                  <div className={`flex items-center ${isUpsideBlog ? 'mb-10' : 'mb-6'}`}>
+                    {section.icon && typeof section.icon === 'string' ? (
+                      <span className="text-3xl mr-4">{section.icon}</span>
+                    ) : section.icon ? (
+                      <section.icon className="w-8 h-8 text-blue-600 mr-4" />
+                    ) : null}
+                    <h2 className={`${isUpsideBlog ? 'text-3xl md:text-4xl lg:text-5xl font-extrabold mb-0' : 'text-2xl md:text-3xl font-bold'} text-gray-900`}>
                       {section.title}
                     </h2>
                   </div>
-                  <div className="space-y-6 text-gray-700 leading-relaxed">
+
+                  {/* Section Image */}
+                  {section.image && (
+                    <div className={`${isUpsideBlog ? 'mb-10' : 'mb-8'} flex flex-col items-center`}>
+                      <div className={`${isUpsideBlog ? 'max-w-[760px] w-full rounded-[18px] shadow-lg' : 'rounded-xl overflow-hidden shadow-lg w-full'}`}>
+                        <img
+                          src={section.image}
+                          alt={section.title}
+                          className={`${isUpsideBlog ? 'w-full h-auto object-cover rounded-[18px]' : 'w-full h-auto object-cover'}`}
+                        />
+                      </div>
+                      {isUpsideBlog && (
+                        <p className="mt-4 text-sm text-gray-500 italic text-center max-w-[760px]">
+                          {section.title}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  <div className={`${isUpsideBlog ? 'space-y-8' : 'space-y-6'} text-gray-700 ${isUpsideBlog ? 'leading-[1.65]' : 'leading-relaxed'}`}>
                     {Array.isArray(section.content) ? (
                       section.content.map((paragraph, pIndex) => (
-                        <p key={pIndex} className="text-lg">
+                        <p key={pIndex} className={`${isUpsideBlog ? 'text-lg md:text-xl' : 'text-lg'}`}>
                           {paragraph}
                         </p>
                       ))
                     ) : (
-                      <p className="text-lg">
+                      <p className={`${isUpsideBlog ? 'text-lg md:text-xl' : 'text-lg'}`}>
                         {section.content}
                       </p>
                     )}
@@ -636,30 +683,36 @@ const BlogDetail = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Operations?
+      <section className={`${isUpsideBlog ? 'py-24 px-6' : 'py-20'} bg-blue-600`}>
+        <div className={`max-w-4xl mx-auto ${isUpsideBlog ? 'px-8 sm:px-12 lg:px-16' : 'px-4 sm:px-6 lg:px-8'} text-center`}>
+          <div className={isUpsideBlog ? 'mb-12' : 'mb-8'}>
+            <h2 className={`${isUpsideBlog ? 'text-4xl md:text-5xl lg:text-6xl mb-4' : 'text-3xl md:text-4xl mb-6'} font-bold text-white`}>
+              {isUpsideBlog ? (
+                <>
+                  Ready to Transform<br />Your Operations?
+                </>
+              ) : (
+                'Ready to Transform Your Operations?'
+              )}
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            <p className={`${isUpsideBlog ? 'text-xl md:text-2xl mb-12' : 'text-xl mb-8'} text-blue-100 max-w-3xl mx-auto`}>
               Discover how AI agents can solve the challenges discussed in this article. Explore specialized solutions or browse our complete marketplace of intelligent automation tools.
             </p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+
+          <div className={`flex flex-col sm:flex-row ${isUpsideBlog ? 'gap-6' : 'gap-4'} justify-center`}>
+            <button
               onClick={handleExploreAgent}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+              className={`${isUpsideBlog ? 'bg-white text-blue-600 px-10 py-5 rounded-lg text-xl font-bold' : 'bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold'} hover:bg-gray-100 transition-colors inline-flex items-center justify-center`}
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
               </svg>
               {blog.exploreButtonText || `Explore ${blog.relatedAgentTitle}`}
             </button>
-            <button 
+            <button
               onClick={handleBrowseAllAgents}
-              className="bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-400 transition-colors border-2 border-blue-500 hover:border-blue-400"
+              className={`${isUpsideBlog ? 'bg-blue-500 text-white px-10 py-5 rounded-lg text-xl font-bold' : 'bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold'} hover:bg-blue-400 transition-colors border-2 border-blue-500 hover:border-blue-400`}
             >
               Browse All Agents
             </button>

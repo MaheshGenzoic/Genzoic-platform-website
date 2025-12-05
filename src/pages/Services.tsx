@@ -1,6 +1,6 @@
 
 import { Database, ShieldHalf, ChartLine, Cloud, Brain, ArrowUp, Handshake, Users } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -51,7 +51,16 @@ const Services = () => {
     
     if (serviceParam) {
       setHighlightedService(serviceParam);
-      
+    } else {
+      setHighlightedService(null);
+    }
+  }, [location.search]);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const serviceParam = urlParams.get('service');
+
+    if (serviceParam) {
       // Always scroll to top first
       window.scrollTo({ top: 0, behavior: 'instant' });
       
@@ -62,14 +71,13 @@ const Services = () => {
     } else {
       // If no service param, just scroll to top
       window.scrollTo({ top: 0, behavior: 'instant' });
-      setHighlightedService(null);
     }
   }, [location.search]); // Watch for URL search changes
 
   const getServiceCardClasses = (serviceType: string) => {
     const baseClasses = "p-8 rounded-xl transition-all duration-700 ease-out relative";
     if (highlightedService === serviceType) {
-      return `${baseClasses} bg-gradient-to-br from-blue-50 to-blue-100 border-4 border-blue-500 shadow-2xl transform scale-95 translate-y-[-30px] z-30 animate-[scale-in_0.7s_ease-out] ring-4 ring-blue-200`;
+      return `${baseClasses} bg-linear-to-br from-blue-50 to-blue-100 border-4 border-blue-500 shadow-2xl transform scale-95 translate-y-[-30px] z-30 animate-[scale-in_0.7s_ease-out] ring-4 ring-blue-200`;
     }
     return `${baseClasses} bg-gray-50 hover:shadow-lg border border-gray-200`;
   };
@@ -79,7 +87,7 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-linear-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">AI & Data Services Designed for the Modern Enterprise</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-10">
@@ -207,7 +215,7 @@ const Services = () => {
       </section>
 
       {/* GenAI Training */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <section className="py-16 bg-linear-to-r from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">GenAI Training for Enterprises</h2>
@@ -286,7 +294,7 @@ const Services = () => {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
                       <Cloud className="text-white w-4 h-4" />
                     </div>
                     <div>
@@ -296,7 +304,7 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
                       <span className="text-white text-xs font-bold">P</span>
                     </div>
                     <div>
@@ -306,7 +314,7 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
                       <ShieldHalf className="text-white w-4 h-4" />
                     </div>
                     <div>
@@ -316,7 +324,7 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
                       <span className="text-white text-xs font-bold">ML</span>
                     </div>
                     <div>
@@ -326,7 +334,7 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-start space-x-3 md:col-span-2">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
                       <Brain className="text-white w-4 h-4" />
                     </div>
                     <div>
@@ -346,7 +354,7 @@ const Services = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-linear-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Let's talk about what's next</h2>
           <p className="text-xl text-blue-100 mb-10">

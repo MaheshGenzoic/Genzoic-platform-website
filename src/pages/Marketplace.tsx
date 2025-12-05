@@ -1,5 +1,5 @@
 import { Phone, MessageCircle, Target, Calendar, Globe, MessageSquare, Database, Building2, PhoneCall, ArrowUp, Send, CircleCheck, Users, ShoppingCart, FileText, Stethoscope, Apple, UserCheck, Megaphone, Zap, Home, TrendingUp, Headphones, Settings, Handshake, ChartLine, Calculator, Gavel, Package, Boxes, Truck, Lightbulb, ChartBar, Server, Clock, FlaskConical, BarChart3, AlertTriangle, CheckCircle, Truck as TruckIcon, Wheat, Tractor } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../components/Header";
@@ -37,6 +37,11 @@ const Marketplace = () => {
   useEffect(() => {
     if (location.state?.selectedFunction) {
       setSelectedFunction(location.state.selectedFunction);
+    }
+  }, [location.state?.selectedFunction]);
+
+  useEffect(() => {
+    if (location.state?.selectedFunction) {
       setTimeout(() => {
         const allFunctionsSection = document.getElementById('all-functions');
         if (allFunctionsSection) {
@@ -44,7 +49,7 @@ const Marketplace = () => {
         }
       }, 100);
     }
-  }, [location.state]);
+  }, [location.state?.selectedFunction]);
 
   // Function to get category from agent tags
   const getCategoryFromTags = (tags: string[]) => {
@@ -147,7 +152,7 @@ const Marketplace = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-24">
+      <section className="bg-linear-to-br from-blue-600 to-blue-800 text-white py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-8">
             The World's First<br />
@@ -347,12 +352,12 @@ const Marketplace = () => {
                     className="w-full h-48 object-cover"
                     style={{ objectPosition: "center top" }}
                   />
-                  <div className="p-6 flex flex-col flex-grow">
+                  <div className="p-6 flex flex-col grow">
                     <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
                       <agent.icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{agent.name}</h3>
-                    <p className="text-gray-600 mb-4 flex-grow">{agent.description}</p>
+                    <p className="text-gray-600 mb-4 grow">{agent.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {agent.tags.map((tag, index) => (
                         <span key={index} className={`px-2 py-1 text-xs rounded-full ${getTagColor(tag)}`}>
@@ -401,7 +406,7 @@ const Marketplace = () => {
       </section>
 
       {/* Custom Agent Request Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800">
+      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Can't find the perfect agent? Let's build one for you.

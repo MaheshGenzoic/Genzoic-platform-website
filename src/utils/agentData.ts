@@ -1,4 +1,5 @@
 import { Phone, MessageCircle, Target, Calendar, Globe, MessageSquare, Database, Building2, PhoneCall, Send, CircleCheck, Users, ShoppingCart, FileText, Stethoscope, Apple, UserCheck, Megaphone, Zap, Home, TrendingUp, Headphones, Settings, Handshake, ChartLine, Calculator, Gavel, Package, Boxes, Truck, Lightbulb, ChartBar, Server, Clock, FlaskConical, BarChart3, AlertTriangle, CheckCircle } from "lucide-react";
+import { ElementType } from "react";
 
 export interface AgentData {
   id: number;
@@ -6,7 +7,7 @@ export interface AgentData {
   slug: string;
   description: string;
   tags: string[];
-  icon: any;
+  icon: ElementType;
   image: string;
   howItWorks?: string[];
   keyCapabilities?: string[];

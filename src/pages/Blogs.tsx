@@ -422,27 +422,27 @@ const Blogs = () => {
       slug: 'genzoic-upside-transformation',
       category: 'Case Study',
       categoryColor: 'bg-violet-100 text-violet-700',
-      date: 'Dec 04, 2025',
+      date: 'Dec 05, 2025',
       title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
-      description: 'At Genzoic, we build custom AI agents that solve real business problems. See how we helped Upside transform their operations with intelligent systems for marketing, inventory, and sales.',
-      image: '/lovable-uploads/upside-dashboard.jpeg',
-      readTime: '12 min read',
+      description: 'At Genzoic, we focus on creating AI-powered solutions that solve real-world business challenges. One great example of that is our recent work with Upside Health, a company on a mission to make better health and nutrition accessible to everyone. To support their growing network of stores, our team designed a Stock Inventory Report System,a smart, data-driven tool that helps Upside Health track, manage, and optimize their stock across multiple cities while reducing waste and improving efficiency.',
+      image: '/lovable-uploads/upside-hro.png',
+      readTime: '8 min read',
       popularity: 90,
       contentSections: [
         {
-          title: 'Custom AI Solutions',
-          subtitle: 'Tailored intelligent systems that solve real business challenges',
-          icon: '🤖'
-        },
-        {
-          title: 'Marketing Optimization',
-          subtitle: 'Data-driven campaign analysis with actionable insights',
-          icon: '📊'
-        },
-        {
-          title: 'Smart Inventory & Sales',
-          subtitle: 'Real-time tracking and AI-powered recommendations',
+          title: 'Smart Inventory Management',
+          subtitle: '35% less wastage through AI-powered stock optimization',
           icon: '📦'
+        },
+        {
+          title: 'Predictive Alerts',
+          subtitle: 'Automated system that predicts and prevents stockouts',
+          icon: '🔔'
+        },
+        {
+          title: 'Sustainable Operations',
+          subtitle: '25% fewer stockouts and 10% lower transport costs',
+          icon: '🌱'
         }
       ]
     }

@@ -465,16 +465,16 @@ const BlogDetail = () => {
       category: 'Case Study',
       categoryColor: 'bg-violet-100 text-violet-700',
       heroGradient: 'from-violet-600 to-purple-800',
-      date: 'Dec 04, 2025',
+      date: 'Dec 05, 2025',
       title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
-      description: 'At Genzoic, we build custom AI agents that solve real business problems. See how we helped Upside transform their operations with intelligent systems for marketing, inventory, and sales.',
-      image: '/lovable-uploads/upside-dashboard.jpeg',
-      readTime: '12 min read',
-      author: 'Genzoic Research Team',
+      description: 'At Genzoic, we focus on creating AI-powered solutions that solve real-world business challenges. One great example of that is our recent work with Upside Health, a company on a mission to make better health and nutrition accessible to everyone. To support their growing network of stores, our team designed a Stock Inventory Report System,a smart, data-driven tool that helps Upside Health track, manage, and optimize their stock across multiple cities while reducing waste and improving efficiency.',
+      image: '/lovable-uploads/upside-hro.png',
+      readTime: '8 min read',
+      author: 'Uzair Tajmat',
       sections: blog6AdditionalSections,
-      relatedAgent: 'ai-marketeer-agent',
-      relatedAgentTitle: 'AI Marketeer Agent',
-      exploreButtonText: 'Explore AI Marketeer Agent'
+      relatedAgent: 'lab-supply-management-agent',
+      relatedAgentTitle: 'Lab Supply Management Agent',
+      exploreButtonText: 'Explore Lab Supply Management Agent'
     }
   };
 
@@ -554,6 +554,8 @@ const BlogDetail = () => {
     }, 100);
   };
 
+  const isUpsideBlog = blog.id === 'genzoic-upside-transformation';
+
   return (
     <div className="bg-white font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Header />
@@ -615,43 +617,55 @@ const BlogDetail = () => {
       </section>
 
       {/* Blog Content */}
-      <section className="py-12">
+      <section className={isUpsideBlog ? 'py-16' : 'py-12'}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             {blog.sections && blog.sections.length > 0 ? (
               blog.sections.map((section, index) => (
-                <div key={index} className="mb-16">
-                  <div className="flex items-center mb-6">
+                <div key={index} className={isUpsideBlog ? 'mb-20' : 'mb-16'}>
+                  {/* Section Divider */}
+                  {isUpsideBlog && index > 0 && (
+                    <div className="mb-16 pt-8 border-t border-gray-200"></div>
+                  )}
+
+                  <div className={`flex items-center ${isUpsideBlog ? 'mb-10' : 'mb-6'}`}>
                     {section.icon && typeof section.icon === 'string' ? (
                       <span className="text-3xl mr-4">{section.icon}</span>
                     ) : section.icon ? (
                       <section.icon className="w-8 h-8 text-blue-600 mr-4" />
                     ) : null}
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <h2 className={`${isUpsideBlog ? 'text-3xl md:text-4xl lg:text-5xl font-extrabold mb-0' : 'text-2xl md:text-3xl font-bold'} text-gray-900`}>
                       {section.title}
                     </h2>
                   </div>
 
                   {/* Section Image */}
                   {section.image && (
-                    <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src={section.image}
-                        alt={section.title}
-                        className="w-full h-auto object-cover"
-                      />
+                    <div className={`${isUpsideBlog ? 'mb-10' : 'mb-8'} flex flex-col items-center`}>
+                      <div className={`${isUpsideBlog ? 'max-w-[760px] w-full rounded-[18px] shadow-lg' : 'rounded-xl overflow-hidden shadow-lg w-full'}`}>
+                        <img
+                          src={section.image}
+                          alt={section.title}
+                          className={`${isUpsideBlog ? 'w-full h-auto object-cover rounded-[18px]' : 'w-full h-auto object-cover'}`}
+                        />
+                      </div>
+                      {isUpsideBlog && (
+                        <p className="mt-4 text-sm text-gray-500 italic text-center max-w-[760px]">
+                          {section.title}
+                        </p>
+                      )}
                     </div>
                   )}
 
-                  <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <div className={`${isUpsideBlog ? 'space-y-8' : 'space-y-6'} text-gray-700 ${isUpsideBlog ? 'leading-[1.65]' : 'leading-relaxed'}`}>
                     {Array.isArray(section.content) ? (
                       section.content.map((paragraph, pIndex) => (
-                        <p key={pIndex} className="text-lg">
+                        <p key={pIndex} className={`${isUpsideBlog ? 'text-lg md:text-xl' : 'text-lg'}`}>
                           {paragraph}
                         </p>
                       ))
                     ) : (
-                      <p className="text-lg">
+                      <p className={`${isUpsideBlog ? 'text-lg md:text-xl' : 'text-lg'}`}>
                         {section.content}
                       </p>
                     )}
@@ -669,21 +683,27 @@ const BlogDetail = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Operations?
+      <section className={`${isUpsideBlog ? 'py-24 px-6' : 'py-20'} bg-blue-600`}>
+        <div className={`max-w-4xl mx-auto ${isUpsideBlog ? 'px-8 sm:px-12 lg:px-16' : 'px-4 sm:px-6 lg:px-8'} text-center`}>
+          <div className={isUpsideBlog ? 'mb-12' : 'mb-8'}>
+            <h2 className={`${isUpsideBlog ? 'text-4xl md:text-5xl lg:text-6xl mb-4' : 'text-3xl md:text-4xl mb-6'} font-bold text-white`}>
+              {isUpsideBlog ? (
+                <>
+                  Ready to Transform<br />Your Operations?
+                </>
+              ) : (
+                'Ready to Transform Your Operations?'
+              )}
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            <p className={`${isUpsideBlog ? 'text-xl md:text-2xl mb-12' : 'text-xl mb-8'} text-blue-100 max-w-3xl mx-auto`}>
               Discover how AI agents can solve the challenges discussed in this article. Explore specialized solutions or browse our complete marketplace of intelligent automation tools.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className={`flex flex-col sm:flex-row ${isUpsideBlog ? 'gap-6' : 'gap-4'} justify-center`}>
             <button
               onClick={handleExploreAgent}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+              className={`${isUpsideBlog ? 'bg-white text-blue-600 px-10 py-5 rounded-lg text-xl font-bold' : 'bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold'} hover:bg-gray-100 transition-colors inline-flex items-center justify-center`}
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
@@ -692,7 +712,7 @@ const BlogDetail = () => {
             </button>
             <button
               onClick={handleBrowseAllAgents}
-              className="bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-400 transition-colors border-2 border-blue-500 hover:border-blue-400"
+              className={`${isUpsideBlog ? 'bg-blue-500 text-white px-10 py-5 rounded-lg text-xl font-bold' : 'bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold'} hover:bg-blue-400 transition-colors border-2 border-blue-500 hover:border-blue-400`}
             >
               Browse All Agents
             </button>

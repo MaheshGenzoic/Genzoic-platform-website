@@ -120,8 +120,8 @@ const Contact = () => {
         formType = 'contact_training';
       }
 
-      console.log('Submitting contact form with type:', formType);
-      console.log('Submission data:', submissionData);
+      // console.log('Submitting contact form with type:', formType);
+      // console.log('Submission data:', submissionData);
       
       const result = await submitToGoogleSheets(submissionData, formType);
       

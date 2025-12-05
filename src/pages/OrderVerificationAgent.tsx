@@ -12,13 +12,22 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { submitToGoogleSheets } from "../utils/googleSheets";
 
+
+interface VerificationAgentForm {
+  fullName: string;
+  email: string;
+  companyName: string;
+  additionalCustomizations: string;
+  timeline: string;
+}
+
 const OrderVerificationAgent = () => {
   const navigate = useNavigate();
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const form = useForm({
+  const form = useForm<VerificationAgentForm>({
     defaultValues: {
       fullName: "",
       email: "",
@@ -84,7 +93,7 @@ const OrderVerificationAgent = () => {
     return tagColorMap[tag] || 'bg-gray-100 text-gray-800';
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: VerificationAgentForm) => {
     setIsSubmitting(true);
     try {
       const formData = {
@@ -134,7 +143,7 @@ const OrderVerificationAgent = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-linear-to-br from-blue-50 to-indigo-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

@@ -16,7 +16,7 @@ const BlogDetail = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Debug logging
-  console.log('BlogDetail - URL id parameter:', id);
+  // console.log('BlogDetail - URL id parameter:', id);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +40,7 @@ const BlogDetail = () => {
     'quick-commerce-insights': {
       id: 'quick-commerce-insights',
       category: 'Quick Commerce Insights',
-      categoryColor: 'bg-indigo-100 text-indigo-800',
+      categoryColor: 'text-indigo-800',
       heroGradient: 'from-indigo-600 to-purple-800',
       date: 'Dec 12, 2024',
       title: 'The Hidden Cost of Order Mistakes in Quick Commerce',
@@ -56,7 +56,7 @@ const BlogDetail = () => {
     'laboratory-automation': {
       id: 'laboratory-automation',
       category: 'Laboratory Automation',
-      categoryColor: 'bg-blue-100 text-blue-700',
+      categoryColor: 'text-blue-700',
       heroGradient: 'from-blue-600 to-cyan-800',
       date: 'Dec 10, 2024',
       title: 'From Chaos to Clarity: Automating Lab Supplies Procurement with AI',
@@ -72,7 +72,7 @@ const BlogDetail = () => {
     'healthcare-ai': {
       id: 'healthcare-ai',
       category: 'Healthcare AI',
-      categoryColor: 'bg-green-100 text-green-700',
+      categoryColor: 'text-green-700',
       heroGradient: 'from-emerald-600 to-teal-800',
       date: 'Dec 8, 2024',
       title: 'AI-Powered Precision Medicine: Tailoring Treatments and Improving Patient Outcomes',
@@ -88,7 +88,7 @@ const BlogDetail = () => {
     'ai-automation': {
       id: 'ai-automation',
       category: 'AI Automation',
-      categoryColor: 'bg-purple-100 text-purple-700',
+      categoryColor: 'text-purple-700',
       heroGradient: 'from-purple-600 to-pink-800',
       date: 'Dec 5, 2024',
       title: 'Beyond Automation: Unpacking the "Agent" in Agentic AI with Genzoic',
@@ -104,7 +104,7 @@ const BlogDetail = () => {
     'agriculture-tech': {
       id: 'agriculture-tech',
       category: 'Agriculture Tech',
-      categoryColor: 'bg-teal-100 text-teal-700',
+      categoryColor: 'text-teal-700',
       heroGradient: 'from-green-600 to-emerald-800',
       date: 'Dec 3, 2024',
       title: 'Agentic AI: Revolutionizing Precision Agriculture in the US',
@@ -120,7 +120,7 @@ const BlogDetail = () => {
     'business-process': {
       id: 'business-process',
       category: 'Business Process',
-      categoryColor: 'bg-orange-100 text-orange-700',
+      categoryColor: 'text-orange-700',
       heroGradient: 'from-orange-600 to-red-800',
       date: 'Dec 1, 2024',
       title: 'Agentic AI vs. RPA: Automating Complex Business Processes Intelligently',
@@ -169,7 +169,7 @@ const BlogDetail = () => {
     'business-intelligence': {
       id: 'business-intelligence',
       category: 'Business Intelligence',
-      categoryColor: 'bg-indigo-100 text-indigo-800',
+      categoryColor: 'text-indigo-800',
       heroGradient: 'from-slate-600 to-blue-800',
       date: 'Nov 28, 2024',
       title: 'The ROI of Agentic AI: Benefits for Service-Based Businesses',
@@ -218,7 +218,7 @@ const BlogDetail = () => {
     'marketing-ai': {
       id: 'marketing-ai',
       category: 'Marketing AI',
-      categoryColor: 'bg-purple-100 text-purple-700',
+      categoryColor: 'text-purple-700',
       heroGradient: 'from-rose-600 to-purple-800',
       date: 'Nov 25, 2024',
       title: 'Hyper-Personalized D2C Marketing: Drive Sales & Loyalty',
@@ -267,7 +267,7 @@ const BlogDetail = () => {
     'tax-finance': {
       id: 'tax-finance',
       category: 'Tax & Finance',
-      categoryColor: 'bg-emerald-100 text-emerald-700',
+      categoryColor: 'text-emerald-700',
       heroGradient: 'from-emerald-600 to-green-800',
       date: 'Nov 22, 2024',
       title: 'AI Tax Filing: Maximize Your Returns with Agentic AI',
@@ -316,7 +316,7 @@ const BlogDetail = () => {
     'data-management': {
       id: 'data-management',
       category: 'Data Management',
-      categoryColor: 'bg-blue-100 text-blue-700',
+      categoryColor: 'text-blue-700',
       heroGradient: 'from-blue-600 to-indigo-800',
       date: 'Nov 19, 2024',
       title: 'Data Management & Analysis: Strategies for Success',
@@ -365,7 +365,7 @@ const BlogDetail = () => {
     'workflow-automation': {
       id: 'workflow-automation',
       category: 'Workflow Automation',
-      categoryColor: 'bg-teal-100 text-teal-700',
+      categoryColor: 'text-teal-700',
       heroGradient: 'from-teal-600 to-cyan-800',
       date: 'Nov 16, 2024',
       title: 'How AI Agents Streamline Your Daily Workflow',
@@ -414,7 +414,7 @@ const BlogDetail = () => {
     'ecommerce-ai': {
       id: 'ecommerce-ai',
       category: 'E-commerce AI',
-      categoryColor: 'bg-pink-100 text-pink-700',
+      categoryColor: 'text-pink-700',
       heroGradient: 'from-pink-600 to-rose-800',
       date: 'Nov 13, 2024',
       title: 'Smart E-commerce: AI-Driven Customer Experience',
@@ -463,7 +463,7 @@ const BlogDetail = () => {
     'genzoic-upside-transformation': {
       id: 'genzoic-upside-transformation',
       category: 'Case Study',
-      categoryColor: 'bg-violet-100 text-violet-700',
+      categoryColor: 'text-violet-700',
       heroGradient: 'from-violet-600 to-purple-800',
       date: 'Dec 05, 2025',
       title: 'How Genzoic is Transforming Upside\'s Business with Custom AI Solutions',
@@ -478,13 +478,13 @@ const BlogDetail = () => {
     }
   };
 
-  console.log('BlogDetail - Available blog keys:', Object.keys(blogData));
+  // console.log('BlogDetail - Available blog keys:', Object.keys(blogData));
 
   const blog = blogData[id as keyof typeof blogData];
-  console.log('BlogDetail - Found blog:', blog ? blog.title : 'Not found');
+  // console.log('BlogDetail - Found blog:', blog ? blog.title : 'Not found');
 
   if (!blog) {
-    console.log('BlogDetail - Blog not found for id:', id);
+    // console.log('BlogDetail - Blog not found for id:', id);
     return (
       <div className="bg-white font-sans min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -561,7 +561,7 @@ const BlogDetail = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className={`bg-gradient-to-br ${blog.heroGradient} text-white py-16 relative overflow-hidden`}>
+      <section className={`bg-linear-to-br ${blog.heroGradient} text-white py-16 relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => navigate('/blogs')}
@@ -575,7 +575,7 @@ const BlogDetail = () => {
             {/* Left Content */}
             <div>
               <div className="mb-6">
-                <span className={`px-3 py-1 rounded-full text-sm font-medium ${blog.categoryColor} bg-opacity-20 text-white`}>
+                <span className={`px-3 py-1 rounded-full text-sm font-medium bg-white bg-opacity-20 ${blog.categoryColor} font-bold border border-white border-opacity-30`}>
                   {blog.category}
                 </span>
               </div>

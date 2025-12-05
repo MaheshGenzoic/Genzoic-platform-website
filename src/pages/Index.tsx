@@ -80,7 +80,7 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-blue-50 h-[600px] flex items-center">
+      <section className="bg-linear-to-br from-gray-50 to-blue-50 h-[600px] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Data & AI Services + Vertical AI Agents<br />
@@ -188,7 +188,7 @@ const Index = () => {
                 className="w-full h-48 object-cover rounded-xl mb-4"
               />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Receptionist Agent</h3>
-              <p className="text-gray-600 mb-4 flex-grow">Handle calls, schedule appointments, and provide 24/7 customer support with intelligent automation.</p>
+              <p className="text-gray-600 mb-4 grow">Handle calls, schedule appointments, and provide 24/7 customer support with intelligent automation.</p>
               <button 
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors mt-auto"
                 onClick={() => handleAgentLearnMore(1)}
@@ -203,7 +203,7 @@ const Index = () => {
                 className="w-full h-48 object-cover rounded-xl mb-4"
               />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Lab Supply Management Agent</h3>
-              <p className="text-gray-600 mb-4 flex-grow">Automate lab inventory tracking and procurement to keep your scientists focused on research.</p>
+              <p className="text-gray-600 mb-4 grow">Automate lab inventory tracking and procurement to keep your scientists focused on research.</p>
               <button 
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors mt-auto"
                 onClick={() => handleAgentLearnMore(19)}
@@ -218,7 +218,7 @@ const Index = () => {
                 className="w-full h-48 object-cover rounded-xl mb-4"
               />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Omnichannel Support AI Agent</h3>
-              <p className="text-gray-600 mb-4 flex-grow">Talk, text, or chat — your AI-powered front desk that works across all customer touchpoints.</p>
+              <p className="text-gray-600 mb-4 grow">Talk, text, or chat — your AI-powered front desk that works across all customer touchpoints.</p>
               <button 
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors mt-auto"
                 onClick={() => handleAgentLearnMore('omnichannel')}
@@ -279,21 +279,21 @@ const Index = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Launch a vertical AI agent in 3 simple steps</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">1</div>
+                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 shrink-0">1</div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Browse Agents</h4>
                     <p className="text-gray-600">Explore our ready-to-deploy vertical agents built for specific industries and workflows.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">2</div>
+                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 shrink-0">2</div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Subscribe or Customize</h4>
                     <p className="text-gray-600">Choose a pricing tier that works for you or request a custom version tailored to your needs.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">3</div>
+                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 shrink-0">3</div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Deploy & Use</h4>
                     <p className="text-gray-600">Go live in minutes with full support, usage tracking, and built-in optimization.</p>
@@ -313,21 +313,21 @@ const Index = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Let's build something custom — fast</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">1</div>
+                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 shrink-0">1</div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Talk to Our Experts</h4>
                     <p className="text-gray-600">Reach out with your challenge — data, AI, governance, or all of the above.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">2</div>
+                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 shrink-0">2</div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Plan with Purpose</h4>
                     <p className="text-gray-600">We co-define a fast POC or full project based on your goals and constraints.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">3</div>
+                  <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 shrink-0">3</div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Deliver Real Outcomes</h4>
                     <p className="text-gray-600">Flexible engagements — from fixed-price solutions to expert team extensions.</p>

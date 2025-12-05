@@ -35,7 +35,7 @@ const About = () => {
       <Header />
 
       {/* Mission Statement Hero */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white h-[600px] flex items-center">
+      <section className="bg-linear-to-br from-blue-600 to-blue-800 text-white h-[600px] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Making AI Real for Every Business</h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
@@ -55,9 +55,9 @@ const About = () => {
           </div>
           
           <div className="space-y-8">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
               <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shrink-0 mt-1">
                   <CircleCheck className="text-white w-4 h-4" />
                 </div>
                 <div>
@@ -69,9 +69,9 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
+            <div className="bg-linear-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
               <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shrink-0 mt-1">
                   <CircleCheck className="text-white w-4 h-4" />
                 </div>
                 <div>
@@ -83,9 +83,9 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
+            <div className="bg-linear-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
               <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center shrink-0 mt-1">
                   <CircleCheck className="text-white w-4 h-4" />
                 </div>
                 <div>
@@ -134,7 +134,7 @@ const About = () => {
               
               <div className="order-1 lg:order-2">
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-indigo-100 to-purple-100 p-8 rounded-3xl">
+                  <div className="bg-linear-to-br from-indigo-100 to-purple-100 p-8 rounded-3xl">
                     <img 
                       className="w-full h-80 rounded-2xl object-cover shadow-lg" 
                       src="/lovable-uploads/2ca998b7-0f45-461a-883a-2881b88fa85c.png" 
@@ -154,7 +154,7 @@ const About = () => {
 
           {/* Problem, Solution, Impact cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl border border-red-100">
+            <div className="bg-linear-to-br from-red-50 to-orange-50 p-8 rounded-2xl border border-red-100">
               <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
                 <span className="text-red-600 text-2xl">⚠️</span>
               </div>
@@ -162,7 +162,7 @@ const About = () => {
               <p className="text-gray-600 leading-relaxed">Businesses needed AI solutions but lacked access to quality expertise, facing high costs and uncertain outcomes.</p>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white p-8 rounded-2xl transform scale-105 shadow-xl">
+            <div className="bg-linear-to-br from-blue-600 to-purple-600 text-white p-8 rounded-2xl transform scale-105 shadow-xl">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <span className="text-white text-2xl">💡</span>
               </div>
@@ -170,7 +170,7 @@ const About = () => {
               <p className="text-blue-100 leading-relaxed">A dual approach: expert AI services for complex projects and a curated marketplace for specialized AI agents.</p>
             </div>
             
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+            <div className="bg-linear-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
                 <ChartLine className="text-green-600 w-8 h-8" />
               </div>
@@ -180,7 +180,7 @@ const About = () => {
           </div>
 
           {/* Services + Marketplace section */}
-          <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 p-10 rounded-3xl">
+          <div className="bg-linear-to-r from-indigo-50 via-purple-50 to-pink-50 p-10 rounded-3xl">
             <h3 className="text-3xl font-semibold text-gray-900 mb-8 text-center">How Services + Marketplace Work Together</h3>
             <div className="grid lg:grid-cols-2 gap-10">
               <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
@@ -236,7 +236,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Want to be part of the next wave of AI transformation?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
